@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="北京文世科技有限公司，位于北京的软件与移动应用开发公司。">
+  <meta name="theme-color" content="#111e26">
+  <title>北京文世科技有限公司 · Wenshi Technology</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #111e26;
+      --muted: #445760;
+      --paper: #f4f3ed;
+      --line: #ced3cc;
+      --lime: #c8f382;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: inherit; text-underline-offset: 0.25em; }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+    .wrap { width: min(1120px, calc(100% - 3rem)); margin-inline: auto; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      min-height: 72px;
+      font-size: 0.875rem;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 0.75rem; font-weight: 750; }
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      color: var(--ink);
+      background: var(--lime);
+      border: 1px solid var(--ink);
+      font-size: 0.9rem;
+    }
+    .hero { color: var(--paper); background: var(--ink); }
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 0.6fr);
+      align-items: center;
+      gap: clamp(2rem, 6vw, 5rem);
+      padding-block: clamp(4rem, 11vw, 8.5rem);
+    }
+    .english-name { color: var(--lime); font-size: clamp(0.95rem, 2vw, 1.2rem); }
+    h1 {
+      font-size: clamp(2.45rem, 6vw, 5.3rem);
+      line-height: 1.13;
+      letter-spacing: -0.065em;
+      margin: 1rem 0 1.45rem;
+      font-weight: 750;
+    }
+    .intro { margin: 0; color: #ccd8d7; font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.8; }
+    .graphic {
+      position: relative;
+      aspect-ratio: 1.12;
+      width: 100%;
+      border: 1px solid #3b5155;
+      background-image:
+        linear-gradient(90deg, #3b5155 1px, transparent 1px),
+        linear-gradient(#3b5155 1px, transparent 1px);
+      background-size: 20% 20%;
+    }
+    .graphic::before, .graphic::after { content: ""; position: absolute; }
+    .graphic::before {
+      inset: 20% 19.8% 20% 20%;
+      border: 1px solid var(--lime);
+      border-radius: 50%;
+    }
+    .graphic::after {
+      inset: 40% 20% 40% 20%;
+      background: var(--lime);
+      clip-path: polygon(0 50%, 16.66% 0, 33.33% 50%, 50% 0, 66.66% 50%, 83.33% 0, 100% 50%, 83.33% 100%, 66.66% 50%, 50% 100%, 33.33% 50%, 16.66% 100%);
+    }
+    .company {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 2rem 4rem;
+      padding-block: clamp(3rem, 7vw, 5rem);
+    }
+    h2 { margin: 0 0 1rem; font-size: clamp(1.65rem, 3vw, 2.2rem); }
+    .company p { max-width: 34rem; margin: 0; color: var(--muted); line-height: 1.8; }
+    .company p + p { margin-top: 0.6rem; }
+    dl { margin: 0; }
+    .row {
+      display: grid;
+      grid-template-columns: minmax(5rem, 0.36fr) minmax(0, 1fr);
+      gap: 0.75rem;
+      padding-block: 1rem;
+      border-top: 1px solid var(--line);
+      line-height: 1.55;
+    }
+    .row:last-child { border-bottom: 1px solid var(--line); }
+    dt { color: var(--muted); }
+    dd { margin: 0; font-weight: 600; }
+    footer .wrap { padding-block: 1.4rem 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+    @media (max-width: 730px) {
+      .hero-inner, .company { grid-template-columns: 1fr; }
+      .graphic { width: min(66%, 255px); }
+    }
+    @media (max-width: 400px) {
+      .wrap { width: calc(100% - 2rem); }
+      .header { min-height: 62px; }
+      .row { grid-template-columns: 4rem minmax(0, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header class="header wrap">
+    <div class="brand"><span class="mark" aria-hidden="true">W</span><span lang="en">Wenshi Technology</span></div>
+    <nav aria-label="网站导航"><a href="#company">公司信息</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="company-name">
+      <div class="hero-inner wrap">
+        <div>
+          <div class="english-name" lang="en">Beijing Wenshi Technology Co., Ltd.</div>
+          <h1 id="company-name">北京文世科技<br>有限公司</h1>
+          <p class="intro">软件与移动应用开发</p>
+        </div>
+        <div class="graphic" aria-hidden="true"></div>
+      </div>
+    </section>
+    <section class="company wrap" id="company" aria-labelledby="company-heading">
+      <div>
+        <h2 id="company-heading">公司信息</h2>
+        <p>北京文世科技有限公司位于中国北京，从事软件与移动应用开发。</p>
+        <p lang="en">Beijing Wenshi Technology Co., Ltd. develops software and mobile applications in Beijing, China.</p>
+      </div>
+      <dl>
+        <div class="row"><dt>公司名称</dt><dd>北京文世科技有限公司</dd></div>
+        <div class="row"><dt>所在地</dt><dd>中国 · 北京 · 海淀区</dd></div>
+      </dl>
+    </section>
+  </main>
+  <footer><div class="wrap">北京文世科技有限公司</div></footer>
+</body>
+</html>
